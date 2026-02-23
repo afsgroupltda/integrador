@@ -1,0 +1,14 @@
+// database-url.ts
+const {
+  DATABASE_HOST,
+  DATABASE_PORT,
+  DATABASE_USER,
+  DATABASE_PASSWORD,
+  DATABASE_NAME,
+  DATABASE_SCHEMA,
+} = process.env
+
+process.env.DATABASE_URL =
+  `postgresql://${DATABASE_USER}:${DATABASE_PASSWORD}` +
+  `@${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}` +
+  `?schema=${DATABASE_SCHEMA}`
